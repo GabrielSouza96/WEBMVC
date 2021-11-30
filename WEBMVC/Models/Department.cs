@@ -1,5 +1,4 @@
-﻿
-namespace WEBMVC.Models
+﻿namespace WEBMVC.Models
 {
     public class Department
     {
