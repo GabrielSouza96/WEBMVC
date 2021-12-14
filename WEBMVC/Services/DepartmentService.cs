@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WEBMVC.Models;
 using WEBMVC.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace WEBMVC.Services
 {
@@ -16,9 +17,9 @@ namespace WEBMVC.Services
             _context = context;
         }
 
-        public List<Department> FindAll()
+        public async Task<List<Department>> FindAllAsync()
         {
-            return _context.Department.OrderBy(x => x.Name).ToList();
+            return await _context.Department.OrderBy(x => x.Name).ToListAsync();
         }
     }
 }
